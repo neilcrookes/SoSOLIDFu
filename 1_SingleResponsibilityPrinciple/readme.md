@@ -6,7 +6,7 @@ Therefore it should only perform one function.
 
 The purpose of the principle is to minimise changes to tested, released code, and to make your classes simpler, easier to understand and more maintainable. It also encourages decoupling to some extent.
 
-The `Shop` class that we've started with performs both basket functionality, and checkout functionality.
+The <a href="../0_Start/Shop.php">`Shop`</a> class that we've started with performs both basket functionality, and checkout functionality.
  
 Some reasonable changes to our requirements could include:
 
@@ -19,7 +19,7 @@ This violates the Single Responsibility Principle as changes to the basket funct
 
 The jobs of managing the basket, and handling the checkout are different, so they should each have their own class.
 
-In this step, we've split the functionality from the old `Shop` class into 2 separate `Basket` and `Checkout` classes.
+In this step, we've split the functionality from the old <a href="../0_Start/Shop.php">`Shop`</a> class into 2 separate <a href="Basket.php">`Basket`</a> and <a href="Checkout.php">`Checkout`</a> classes.
 
 Now, if the requirements for managing the basket changes, we just need to change the Basket class.
 
@@ -33,8 +33,8 @@ What if there is a new requirement to support decrementing the stock counts of t
 
 Currently we can't achieve this easily, without modifying our existing code. Our code does not make it very easy for our future selves, or a colleague to add this functionality, without making changes, which could introduce a bug in our tested, release code.
 
-Sure we could extend the `Checkout` class and override the `checkout()` method, calling `parent::checkout()` and if the result is true, then decrement the stock levels of each Product in the Basket. But what if we need to add another new feature in the future, should we extend again? And again? Where will it end?
+Sure we could extend the <a href="Checkout.php">`Checkout`</a> class and override the <a href="Checkout.php#L17">`checkout()`</a> method, calling `parent::checkout()` and if the result is true, then decrement the stock levels of each Product in the Basket. But what if we need to add another new feature in the future, should we extend again? And again? Where will it end?
 
-Alternatively, let's assume we have an MVC framework, and the `Checkout::checkout()` method is called in a controller action, we could edit the controller action and add this functionality if the result is true. But that involves edit tested, released code, which again could introduce a bug, and has the danger of making our controller actions really long. And what if we have multiple controller actions for the checkout, e.g. one for credit card payments, one for paypal payments etc., we'd have to add this code in all those controller actions, which violates the Don't Repeat Yourself principle.
+Alternatively, let's assume we have an MVC framework, and the <a href="Checkout.php#L17">`Checkout::checkout()`</a> method is called in a controller action, we could edit the controller action and add this functionality if the result is true. But that involves edit tested, released code, which again could introduce a bug, and has the danger of making our controller actions really long. And what if we have multiple controller actions for the checkout, e.g. one for credit card payments, one for paypal payments etc., we'd have to add this code in all those controller actions, which violates the Don't Repeat Yourself principle.
 
-So, how to solve? Check out step 2 for a suggestion.
+So, how to solve? Check out <a href="../2_OpenClosedPrinciple/readme.md">step 2</a> for a suggestion.

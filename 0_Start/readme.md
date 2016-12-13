@@ -1,10 +1,10 @@
 # Start
 
-This is a simple example of a Shopping Cart application with Value Objects for `Product` and `CreditCard`, a simple `Gateway` class to handle the payment processing, and a more complex `Shop` class that handles the basket and checkout functionality.
+This is a simple example of a Shopping Cart application with Value Objects for <a href="Product.php">`Product`</a> and <a href="CreditCard.php">`CreditCard`</a>, a simple <a href="Gateway.php">`Gateway`</a> class to handle the payment processing, and a more complex <a href="Shop.php">`Shop`</a> class that handles the basket and checkout functionality.
 
 These set of classes, whilst they meet the current requirements, and they look simple enough, don't consider the SOLID principles.
 
-As a result, in a real-world eCommerce store, where the classes would be more complex, when requirements change, we'll need to update the classes, which could introduce bugs.
+As a result, in a real-world eCommerce store, where the classes would be more complex, when requirements change, we'll need to update the classes, modifying existing tested and released code, which could introduce bugs.
 
 Or when a new developer joins the project, they might be unsure how you originally intended new features be added, and they might make changes, that cause future requirements to be difficult to implement.
 
