@@ -30,4 +30,4 @@ So how about if we made a new class `ProductVariant` and made it extend <a href=
 
 So our application cannot support swapping out a parent class for a sub type. It violates the Liskov Substitution Principle
 
-Check out <a href="../LiskovSubstitutionPrinciple">step 3</a> to see what we could have done in the first place that would have allowed us to add support for Product Variants as a subclass of <a href="Product.php">`Product`</a> without having to modify any tested, released code. 
+Check out <a href="../3_LiskovSubstitutionPrinciple/readme.md">step 3</a> to see what we could have done in the first place that would have allowed us to add support for Product Variants as a subclass of <a href="Product.php">`Product`</a> without having to modify any tested, released code. 
